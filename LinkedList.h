@@ -3,12 +3,12 @@
 
 #include <stdbool.h>
 
-typedef struct {
+typedef struct Node{
     void *data;
     struct Node *next;
 }Node;
 
-typedef struct {
+typedef struct LinkedList{
     Node *first;
     int size;
 }LinkedList;
