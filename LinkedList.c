@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "LinkedList.h"
-#include "log.h"
+#include "log.h" //https://github.com/rxi/log.c
 
 void init(LinkedList *list) {
 	log_info("Inicializando a lista");

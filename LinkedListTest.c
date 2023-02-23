@@ -4,7 +4,11 @@
 #include "log.h"
 
 int main() {
-	log_set_level(LOG_TRACE);
+	FILE *file = fopen("program.log","w");
+	
+	log_set_level(LOG_INFO);
+	log_add_fp(file, LOG_TRACE);
+	
 	LinkedList lista;
 	init(&lista);
 
