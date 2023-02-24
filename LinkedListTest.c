@@ -18,6 +18,12 @@ int main() {
 	numero = malloc(sizeof(int));
 	*numero = 20;
 	enqueue(&lista, numero);
+
+	numero = (int*)dequeue(&lista);
+	printf("%d removido\n", *numero);
+	numero = (int*)dequeue(&lista);
+	printf("%d removido\n", *numero);	
+	dequeue(&lista);
 				
 	return EXIT_SUCCESS;
 }

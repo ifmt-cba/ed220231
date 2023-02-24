@@ -46,7 +46,24 @@ int enqueue(LinkedList *list, void *data) {
 }
 
 void* dequeue(LinkedList *list) {
-	return NULL;
+	log_info("Removendo o primeiro dado da fila");
+	log_trace("dequeue ->");
+	if (isEmpty(list)) {
+		log_warn("Não há elementos na fila para serem removidos");
+		return NULL;
+	} else {
+		log_debug("list->first: %p", list->first);
+		Node *aux = list->first;
+		void *data = aux->data;
+		list->first = list->first->next;
+		list->size -= 1;
+		free(aux);
+		log_info("Dado removido com sucesso!");
+		log_debug("Nó removido: %p", aux);		
+		log_debug("data returned: %p", data);
+		log_trace("dequeue <-");
+		return data;
+	}
 }
 
 void* first(LinkedList *list) {
