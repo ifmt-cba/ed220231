@@ -1,4 +1,4 @@
-all: clean ponteiro ponteiro_duplo linkedlist
+all: clean ponteiro ponteiro_duplo linkedlist genlinkedlist
 
 ponteiro:
 	@echo
@@ -42,6 +42,20 @@ linkedlist:
 	@echo
 	./linkedlist
 
+genlinkedlist:
+	@echo
+	@echo ==========================
+	@echo    LISTA GENERALIZADA
+	@echo ==========================
+	@echo Compilando o programa genlinkedlist
+	gcc --std=c99 -DLOG_USE_COLOR log.h log.c GeneralizedLinkedList.h GeneralizedLinkedList.c GeneralizedLinkedListTest.c -o genlinkedlist
+	@echo Tornando o arquivo executável
+	chmod +x genlinkedlist
+	@echo Executando o programa genlinkedlist
+	@echo ======================================================
+	@echo
+	./genlinkedlist
+
 clean:
 	@echo
 	@echo ==========================
@@ -53,3 +67,5 @@ clean:
 	rm -f ponteiro_duplo
 	@echo Removendo o programa linkedlist
 	rm -f linkedlist
+	@echo Removendo o programa genlinkedlist
+	rm -f genlinkedlist
